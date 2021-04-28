@@ -61,6 +61,8 @@ int main(const int argc, const char **argv)
         memset(buffer, 0, BUFFER); // Clearing the buffer by assigning 0 to each byte
     }
 
+    // Closing the socket
+    close(sock);
     return 0;
 }
 
