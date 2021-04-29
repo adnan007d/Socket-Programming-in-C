@@ -1,13 +1,8 @@
-This is a Simple TCP webclient which sends an HTTP get request and displays the response
+# Introduction
 
-# Compiling
+This is a repo where I will be implementing socket programming using c
 
-`make`
+# Current working programs
 
-`make clean` to clear all generated files
-
-# Usage
-
-`./client <ipaddress>`
-
-`./client 192.168.0.1`
+[Simple webclient](simple-webclient/tcp_client.c)
+[Simple webserver](simple-webserver/server.c)
