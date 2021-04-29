@@ -27,14 +27,14 @@ int main(const int argc, const char **argv)
     // AF_INET means we will use IPv4 protocol
     // SOCK_STREAM is TCP Connection
     // 0 to select default protocol (TCP/IP Most Case)
-    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) <= 0)
+    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
         print_error("Socket Creation Error");
 
     serv_addr.sin_family = AF_INET;
-    serv_addr.sin_port = htons(PORT);
+    serv_addr.sin_port = htons(PORT); // Convertig the port from little or big endian to network bytes
 
     // Changing the ipaddress from string to binary
-    if ((inet_pton(AF_INET, argv[1], &serv_addr.sin_addr)) <= 0)
+    if ((inet_pton(AF_INET, argv[1], &serv_addr.sin_addr)) < 0)
         print_error("Invalid Address");
 
     // Connecting the socket
